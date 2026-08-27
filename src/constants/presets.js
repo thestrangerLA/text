@@ -10,6 +10,16 @@ export const VOICE_PRESETS = [
     icon: 'Mic'
   },
   {
+    id: 'review',
+    nameTh: '🛍️ รีวิวสินค้า',
+    nameEn: '🛍️ Product Reviewer',
+    descTh: 'เสียงกระตือรือร้น สดใส มีพลัง เหมาะสำหรับรีวิวสินค้า ขายของออนไลน์',
+    descEn: 'Enthusiastic, bright, energetic tone for product reviews & sales',
+    rate: 1.15,
+    pitch: 1.15,
+    icon: 'ShoppingBag'
+  },
+  {
     id: 'news',
     nameTh: '📢 ผู้ประกาศข่าว',
     nameEn: '📢 News Anchor',
@@ -74,6 +84,10 @@ export const VOICE_PRESETS = [
 export const SAMPLE_TEXTS = {
   th: [
     {
+      category: '🛍️ รีวิวสินค้า',
+      text: 'สวัสดีครับทุกคน! วันนี้จะมารีวิวไอเทมเด็ดตัวนี้เลย บอกเลยว่าคุณภาพเกินราคา พกพาง่าย ใช้งานสะดวกสุดๆ ใครกำลังมองหาของดีราคาสบายกระเป๋า ห้ามพลาดเลยครับ!'
+    },
+    {
       category: '📢 ข่าวเช้า',
       text: 'สวัสดีครับท่านผู้ฟัง ยินดีต้อนรับสู่รายการข่าวเช้าวันนี้ กรมอุตุนิยมวิทยาพยากรณ์อากาศทั่วไทยวันนี้ ท้องฟ้าสดใส อากาศแจ่มใสและมีลมพัดเย็นสบายในหลายพื้นที่ครับ'
     },
@@ -82,12 +96,8 @@ export const SAMPLE_TEXTS = {
       text: 'กาลครั้งหนึ่งนานมาแล้ว ในป่าใหญ่ลึกอันเงียบสงบ มีกระต่ายน้อยตัวหนึ่งผู้มีความฝันอยากออกเดินทางไปสำรวจดวงดาวบนท้องฟ้า มันเพียรพยายามฝึกฝนทุกวันด้วยความมุ่งมั่น'
     },
     {
-      category: '🇱🇦 ตัวอย่างภาษาลาว 1',
-      text: 'ສະບາຍດີ ຍິນດີຕ້ອນຮັບເຂົ້າສູ່ລະບົບແປງຂໍ້ຄວາມເປັນສຽງເວົ້າ ຂໍໃຫ້ທ່ານมีความสุขกับการใช้งาน'
-    },
-    {
-      category: '🇱🇦 ตัวอย่างภาษาลาว 2',
-      text: 'ມື້ນີ້ອາກາດດີຫຼາຍ ຂໍໃຫ້ເປັນມື້ທີ່ມີຄວາມສຸກ ແລະ ສົມຫວັງໃນທຸກໆຢ່າງ ເດີ'
+      category: '🇱🇦 ตัวอย่างภาษาลาว (รีวิว)',
+      text: 'ສະບາຍດີທຸກໆຄົນ! ມື້ນີ້ຈະມາຣີວິວສິນຄ້າສຸດພິເສດໂຕນີ້ ເວົ້າເລີຍວ່າຄຸນນະພາບດີຫຼາຍ ໃຊ້ງານງ່າຍ ໃຜທີ່ກຳລັງຊອກຫາຢູ່ ຫ້າມພາດເດີ!'
     },
     {
       category: '💡 แรงบันดาลใจ',
@@ -95,6 +105,10 @@ export const SAMPLE_TEXTS = {
     }
   ],
   en: [
+    {
+      category: '🛍️ Product Review',
+      text: "Hey everyone! Check out this amazing gadget I've been testing. The build quality is top-notch, battery life is insane, and it offers incredible value for money. Highly recommended!"
+    },
     {
       category: '📢 Daily News',
       text: 'Good morning and welcome to the daily tech briefing. Researchers have unveiled a groundbreaking new speech synthesis engine capable of ultra-realistic voice cloning and emotion rendering.'
@@ -104,12 +118,8 @@ export const SAMPLE_TEXTS = {
       text: 'Once upon a time in a kingdom far beyond the misty mountains, a young explorer discovered a forgotten library filled with glowing magical manuscripts.'
     },
     {
-      category: '🇱🇦 Lao Sample',
-      text: 'ສະບາຍດີ ຍິນດີຕ້ອນຮັບເຂົ້າສູ່ລະບົບແປງຂໍ້ຄວາມເປັນສຽງເວົ້າ VoiceCraft'
-    },
-    {
-      category: '🚀 AI Initialization',
-      text: 'System initialization complete. Accessing neural speech synthesis module. Voice frequency calibrated. Preparing output stream.'
+      category: '🇱🇦 Lao Review',
+      text: 'ສະບາຍດີທຸກໆຄົນ! ມື້ນີ້ຈະມາຣີວິວສິນຄ້າສຸດພິເສດໂຕນີ້ ໃຊ້ງານງ່າຍ ຄຸນນະພາບດີຫຼາຍ!'
     },
     {
       category: '💡 Inspiration',
@@ -121,9 +131,9 @@ export const SAMPLE_TEXTS = {
 export const UI_TRANSLATIONS = {
   th: {
     appTitle: 'VoiceCraft TTS',
-    subtitle: 'ระบบแปลงข้อความเป็นเสียงพูด (รองรับภาษาไทย, ลาว, อังกฤษ และทุกภาษา)',
+    subtitle: 'ระบบแปลงข้อความเป็นเสียงพูด (รองรับภาษาไทย, ลาว, อังกฤษ และสไตล์รีวิวสินค้า)',
     inputHeader: 'ข้อความที่คุณต้องการให้พูด (รองรับภาษาไทย, ลาว 🇱🇦, อังกฤษ)',
-    placeholder: 'พิมพ์หรือวางข้อความที่นี่ (รองรับภาษาไทย, ภาษาลาว ສະບາຍດີ, ภาษาอังกฤษ)...',
+    placeholder: 'พิมพ์หรือวางข้อความที่นี่ (เช่น ข้อความรีวิวสินค้า, ข่าว, นิทาน)...',
     sampleButton: 'ดึงข้อความตัวอย่าง',
     clearButton: 'ล้างข้อความ',
     copyButton: 'คัดลอกข้อความ',
@@ -154,17 +164,17 @@ export const UI_TRANSLATIONS = {
     clearHistory: 'ล้างประวัติ',
     replay: 'ฟังอีกครั้ง',
     guideModalTitle: 'คู่มือการใช้งาน VoiceCraft',
-    guidePoint1: '1. พิมพ์ข้อความภาษาไทย, ภาษาลาว (ສະບາຍດີ) หรือภาษาอังกฤษในช่องป้อนข้อความ',
-    guidePoint2: '2. เลือกเสียงพูดภาษาไทย/ลาว หรือภาษาต่างประเทศจากรายการเสียงของระบบ',
-    guidePoint3: '3. เลือกสไตล์เสียงพากย์สำเร็จรูป (เช่น หุ่นยนต์, ผู้ประกาศข่าว, นิทาน) หรือปรับแต่งความเร็วและระดับเสียงด้วยตัวเอง',
-    guidePoint4: '4. กดปุ่ม "อ่านออกเสียง" ระบบจะอ่านไฮไลท์คำแบบเรียลไทม์ และรองรับการกดดาวน์โหลดไฟล์เสียงเพื่อเซฟไว้ฟังได้',
+    guidePoint1: '1. พิมพ์ข้อความภาษาไทย, ลาว หรืออังกฤษ (เช่น บทรีวิวสินค้าขายของออนไลน์)',
+    guidePoint2: '2. เลือกเสียงพูดจากรายการเสียงของระบบ',
+    guidePoint3: '3. เลือกสไตล์ "🛍️ รีวิวสินค้า" หรือสไตล์อื่นๆ (หุ่นยนต์, ผู้ประกาศข่าว, นิทาน) หรือปรับระดับความเร็วและ Pitch',
+    guidePoint4: '4. กดปุ่ม "อ่านออกเสียง" ระบบจะอ่านไฮไลท์คำแบบเรียลไทม์ และกดดาวน์โหลดไฟล์เสียงไปใช้กับคลิปได้',
     langToggle: 'TH / EN'
   },
   en: {
     appTitle: 'VoiceCraft TTS',
-    subtitle: 'Text-to-Speech Studio with Lao, Thai, and English Voice Support',
-    inputHeader: 'Text to Speak (Supports Lao 🇱🇦, Thai, English)',
-    placeholder: 'Type or paste text here (supports Lao ສະບາຍດີ, Thai, English, and all system languages)...',
+    subtitle: 'Text-to-Speech Studio with Product Review & Multi-language Support',
+    inputHeader: 'Text to Speak (Supports Product Reviews, Lao 🇱🇦, Thai, English)',
+    placeholder: 'Type or paste text here (product reviews, news, stories)...',
     sampleButton: 'Load Sample Text',
     clearButton: 'Clear',
     copyButton: 'Copy Text',
@@ -195,9 +205,9 @@ export const UI_TRANSLATIONS = {
     clearHistory: 'Clear History',
     replay: 'Replay Clip',
     guideModalTitle: 'VoiceCraft User Guide',
-    guidePoint1: '1. Type or paste your text in Lao, Thai, or English.',
-    guidePoint2: '2. Pick a voice engine (Lao, Thai, or international).',
-    guidePoint3: '3. Select a voice style preset (e.g. Robot, News Anchor, Story) or manually adjust Speed and Pitch.',
+    guidePoint1: '1. Type or paste your text (e.g. product review script).',
+    guidePoint2: '2. Pick a voice engine from your system voices.',
+    guidePoint3: '3. Select the "Product Reviewer" preset or other vocal styles.',
     guidePoint4: '4. Click "Speak Aloud" to start reading with live word highlighting & download options.',
     langToggle: 'EN / TH'
   }

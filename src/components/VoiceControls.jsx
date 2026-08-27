@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Sliders, Mic, Radio, Bot, Zap, Sparkles, Film, Smile, RefreshCw, Volume2, Info } from 'lucide-react';
+import { Sliders, Mic, Radio, Bot, Zap, Sparkles, Film, Smile, RefreshCw, Volume2, Info, ShoppingBag } from 'lucide-react';
 import { VOICE_PRESETS } from '../constants/presets';
 
 const ICON_MAP = {
   Mic,
+  ShoppingBag,
   Radio,
   Bot,
   Zap,
