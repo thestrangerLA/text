@@ -10,6 +10,36 @@ export const VOICE_PRESETS = [
     icon: 'Mic'
   },
   {
+    id: 'lao_soft',
+    nameTh: '🇱🇦 เสียงลาวนุ่มนวล',
+    nameEn: '🇱🇦 Soft Lao Tone',
+    descTh: 'เสียงลาวนุ่มนวล อ่อนหวาน ฟังสบายเป็นธรรมชาติ',
+    descEn: 'Gentle, soft, and soothing Lao vocal pronunciation',
+    rate: 0.95,
+    pitch: 1.05,
+    icon: 'Sparkles'
+  },
+  {
+    id: 'lao_formal',
+    nameTh: '🇱🇦 เสียงลาวทางการ',
+    nameEn: '🇱🇦 Formal Lao Voice',
+    descTh: 'เสียงลาวทุ้มชัดเจน เป็นทางการ สำหรับอ่านข่าวและนำเสนองาน',
+    descEn: 'Clear, formal, and articulate Lao broadcast tone',
+    rate: 1.02,
+    pitch: 0.95,
+    icon: 'Radio'
+  },
+  {
+    id: 'lao_lively',
+    nameTh: '🇱🇦 เสียงลาวสดใส',
+    nameEn: '🇱🇦 Lively Lao Voice',
+    descTh: 'เสียงลาวสดใส มีพลัง เหมาะสำหรับคลิปสั้นและโซเชียลมีเดีย',
+    descEn: 'Upbeat and energetic Lao tone for social media & clips',
+    rate: 1.18,
+    pitch: 1.2,
+    icon: 'Smile'
+  },
+  {
     id: 'review',
     nameTh: '🛍️ รีวิวสินค้า',
     nameEn: '🛍️ Product Reviewer',
@@ -84,11 +114,27 @@ export const VOICE_PRESETS = [
 export const SAMPLE_TEXTS = {
   th: [
     {
-      category: '🛍️ รีวิวสินค้า',
+      category: '🇱🇦 ทักทายภาษาลาว',
+      text: 'ສະບາຍດີ! ຍິນດີຕ້ອນຮັບທຸກໆທ່ານເຂົ້າສູ່ລະບົບແປງຂໍ້ຄວາມເປັນສຽງເວົ້າ VoiceCraft. ຂໍໃຫ້ທ່ານมีความสุขກັບການຟັງສຽງເດີ.'
+    },
+    {
+      category: '🇱🇦 รีวิวสินค้าภาษาลาว',
+      text: 'ສະບາຍດີທຸກໆຄົນ! ມື້ນີ້ຈະມາຣີວິວສິນຄ້າສຸດພິເສດໂຕນີ້ ເວົ້າເລີຍວ່າຄຸນນະພາບດີຫຼາຍ ໃຊ້ງານງ່າຍ ໃຜທີ່ກຳລັງຊອກຫາຢູ່ ຫ້າມພາດເດີ!'
+    },
+    {
+      category: '🇱🇦 ท่องเที่ยวภาษาลาว',
+      text: 'ຫຼວງພະບາງ ເມືອງມໍລະດົກໂລກ ທີ່ມີຄວາມງາມທາງທຳມະຊາດ ແລະ ວັດທະນະທຳອັນເກົ່າແກ່ ຂໍເຊີນຊວນທຸກທ່ານມາຢ້ຽມຢາມ ແລະ ສໍາຜັດວິຖີຊີວິດອັນແສນອົບອຸ່ນ.'
+    },
+    {
+      category: '🇱🇦 ข่าวสารภาษาลาว',
+      text: 'ສະບາຍດີທ່ານຜູ້ຟັງ ຍິນດີຕ້ອນຮັບເຂົ້າສູ່ລາຍການຂ່າວສານປະຈຳວັນ ມື້ນີ້ສະພາບອາກາດແຈ່ມໃສດີ ມີລົມພັດເຢັນສະບາຍໃນຫຼາຍພື້ນທີ່.'
+    },
+    {
+      category: '🛍️ รีวิวสินค้าภาษาไทย',
       text: 'สวัสดีครับทุกคน! วันนี้จะมารีวิวไอเทมเด็ดตัวนี้เลย บอกเลยว่าคุณภาพเกินราคา พกพาง่าย ใช้งานสะดวกสุดๆ ใครกำลังมองหาของดีราคาสบายกระเป๋า ห้ามพลาดเลยครับ!'
     },
     {
-      category: '📢 ข่าวเช้า',
+      category: '📢 ข่าวเช้าภาษาไทย',
       text: 'สวัสดีครับท่านผู้ฟัง ยินดีต้อนรับสู่รายการข่าวเช้าวันนี้ กรมอุตุนิยมวิทยาพยากรณ์อากาศทั่วไทยวันนี้ ท้องฟ้าสดใส อากาศแจ่มใสและมีลมพัดเย็นสบายในหลายพื้นที่ครับ'
     },
     {
@@ -96,15 +142,23 @@ export const SAMPLE_TEXTS = {
       text: 'กาลครั้งหนึ่งนานมาแล้ว ในป่าใหญ่ลึกอันเงียบสงบ มีกระต่ายน้อยตัวหนึ่งผู้มีความฝันอยากออกเดินทางไปสำรวจดวงดาวบนท้องฟ้า มันเพียรพยายามฝึกฝนทุกวันด้วยความมุ่งมั่น'
     },
     {
-      category: '🇱🇦 ตัวอย่างภาษาลาว (รีวิว)',
-      text: 'ສະບາຍດີທຸກໆຄົນ! ມື້ນີ້ຈະມາຣີວິວສິນຄ້າສຸດພິເສດໂຕນີ້ ເວົ້າເລີຍວ່າຄຸນນະພາບດີຫຼາຍ ໃຊ້ງານງ່າຍ ໃຜທີ່ກຳລັງຊອກຫາຢູ່ ຫ້າມພາດເດີ!'
-    },
-    {
       category: '💡 แรงบันดาลใจ',
       text: 'ทุกๆ วันคือโอกาสใหม่ในการเรียนรู้และเติบโต อย่ากลัวที่จะเริ่มต้น สิ่งสำคัญที่สุดคือการไม่หยุดก้าวไปข้างหน้าเพื่อความฝันของคุณ'
     }
   ],
   en: [
+    {
+      category: '🇱🇦 Lao Greeting',
+      text: 'ສະບາຍດີ! ຍິນດີຕ້ອນຮັບທຸກໆທ່ານເຂົ້າສູ່ລະບົບແປງຂໍ້ຄວາມເປັນສຽງເວົ້າ VoiceCraft.'
+    },
+    {
+      category: '🇱🇦 Lao Product Review',
+      text: 'ສະບາຍດີທຸກໆຄົນ! ມື້ນີ້ຈະມາຣີວິວສິນຄ້າສຸດພິເສດໂຕນີ້ ໃຊ້ງານງ່າຍ ຄຸນນະພາບດີຫຼາຍ!'
+    },
+    {
+      category: '🇱🇦 Lao Tourism',
+      text: 'ຫຼວງພະບາງ ເມືອງມໍລະດົກໂລກ ທີ່ມີຄວາມງາມທາງທຳມະຊາດ ແລະ ວັດທະນະທຳອັນເກົ່າແກ່ ຂໍເຊີນຊວນທຸກທ່ານມາຢ້ຽມຢາມ.'
+    },
     {
       category: '🛍️ Product Review',
       text: "Hey everyone! Check out this amazing gadget I've been testing. The build quality is top-notch, battery life is insane, and it offers incredible value for money. Highly recommended!"
@@ -118,10 +172,6 @@ export const SAMPLE_TEXTS = {
       text: 'Once upon a time in a kingdom far beyond the misty mountains, a young explorer discovered a forgotten library filled with glowing magical manuscripts.'
     },
     {
-      category: '🇱🇦 Lao Review',
-      text: 'ສະບາຍດີທຸກໆຄົນ! ມື້ນີ້ຈະມາຣີວິວສິນຄ້າສຸດພິເສດໂຕນີ້ ໃຊ້ງານງ່າຍ ຄຸນນະພາບດີຫຼາຍ!'
-    },
-    {
       category: '💡 Inspiration',
       text: 'Success is not final, failure is not fatal: it is the courage to continue that counts. Believe in yourself and keep pushing forward.'
     }
@@ -131,9 +181,9 @@ export const SAMPLE_TEXTS = {
 export const UI_TRANSLATIONS = {
   th: {
     appTitle: 'VoiceCraft TTS',
-    subtitle: 'ระบบแปลงข้อความเป็นเสียงพูด (รองรับภาษาไทย, ลาว, อังกฤษ และสไตล์รีวิวสินค้า)',
-    inputHeader: 'ข้อความที่คุณต้องการให้พูด (รองรับภาษาไทย, ลาว 🇱🇦, อังกฤษ)',
-    placeholder: 'พิมพ์หรือวางข้อความที่นี่ (เช่น ข้อความรีวิวสินค้า, ข่าว, นิทาน)...',
+    subtitle: 'ระบบแปลงข้อความเป็นเสียงพูด (เพิ่มระบบเสียงภาษาลาว 🇱🇦, ภาษาไทย, อังกฤษ และสไตล์ต่างๆ)',
+    inputHeader: 'ข้อความที่คุณต้องการให้พูด (รองรับภาษาลาว 🇱🇦, ไทย, อังกฤษ)',
+    placeholder: 'พิมพ์หรือวางข้อความที่นี่ (รองรับภาษาลาว ສະບາຍດີ, ภาษาไทย, ภาษาอังกฤษ)...',
     sampleButton: 'ดึงข้อความตัวอย่าง',
     clearButton: 'ล้างข้อความ',
     copyButton: 'คัดลอกข้อความ',
@@ -164,17 +214,17 @@ export const UI_TRANSLATIONS = {
     clearHistory: 'ล้างประวัติ',
     replay: 'ฟังอีกครั้ง',
     guideModalTitle: 'คู่มือการใช้งาน VoiceCraft',
-    guidePoint1: '1. พิมพ์ข้อความภาษาไทย, ลาว หรืออังกฤษ (เช่น บทรีวิวสินค้าขายของออนไลน์)',
-    guidePoint2: '2. เลือกเสียงพูดจากรายการเสียงของระบบ',
-    guidePoint3: '3. เลือกสไตล์ "🛍️ รีวิวสินค้า" หรือสไตล์อื่นๆ (หุ่นยนต์, ผู้ประกาศข่าว, นิทาน) หรือปรับระดับความเร็วและ Pitch',
-    guidePoint4: '4. กดปุ่ม "อ่านออกเสียง" ระบบจะอ่านไฮไลท์คำแบบเรียลไทม์ และกดดาวน์โหลดไฟล์เสียงไปใช้กับคลิปได้',
+    guidePoint1: '1. พิมพ์ข้อความภาษาลาว (ສະບາຍດີ), ไทย หรืออังกฤษ',
+    guidePoint2: '2. เลือกเสียงพูดภาษาลาว/ไทย หรือระบบเสียงสากล',
+    guidePoint3: '3. เลือกสไตล์เสียงลาวสำเร็จรูป (เสียงลาวนุ่มนวล, เสียงลาวทางการ, เสียงลาวสดใส) หรือสไตล์อื่นๆ',
+    guidePoint4: '4. กดปุ่ม "อ่านออกเสียง" ระบบจะอ่านไฮไลท์คำแบบเรียลไทม์ และกดดาวน์โหลดไฟล์เสียงไปใช้ได้ทันที',
     langToggle: 'TH / EN'
   },
   en: {
     appTitle: 'VoiceCraft TTS',
-    subtitle: 'Text-to-Speech Studio with Product Review & Multi-language Support',
-    inputHeader: 'Text to Speak (Supports Product Reviews, Lao 🇱🇦, Thai, English)',
-    placeholder: 'Type or paste text here (product reviews, news, stories)...',
+    subtitle: 'Text-to-Speech Studio with Enhanced Lao 🇱🇦, Thai, & English Voices',
+    inputHeader: 'Text to Speak (Supports Lao 🇱🇦, Thai, English)',
+    placeholder: 'Type or paste text here (Lao ສະບາຍດີ, Thai, English)...',
     sampleButton: 'Load Sample Text',
     clearButton: 'Clear',
     copyButton: 'Copy Text',
@@ -205,9 +255,9 @@ export const UI_TRANSLATIONS = {
     clearHistory: 'Clear History',
     replay: 'Replay Clip',
     guideModalTitle: 'VoiceCraft User Guide',
-    guidePoint1: '1. Type or paste your text (e.g. product review script).',
-    guidePoint2: '2. Pick a voice engine from your system voices.',
-    guidePoint3: '3. Select the "Product Reviewer" preset or other vocal styles.',
+    guidePoint1: '1. Type or paste text in Lao, Thai, or English.',
+    guidePoint2: '2. Pick a voice engine (Lao, Thai, or international).',
+    guidePoint3: '3. Choose dedicated Lao voice presets (Soft Lao, Formal Lao, Lively Lao) or custom sliders.',
     guidePoint4: '4. Click "Speak Aloud" to start reading with live word highlighting & download options.',
     langToggle: 'EN / TH'
   }

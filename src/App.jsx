@@ -5,7 +5,7 @@ import VoiceControls from './components/VoiceControls';
 import PlaybackControls from './components/PlaybackControls';
 import HistorySection from './components/HistorySection';
 import GuideModal from './components/GuideModal';
-import { getAvailableVoices } from './utils/speechUtils';
+import { getAvailableVoices, containsLaoScript } from './utils/speechUtils';
 import { UI_TRANSLATIONS, SAMPLE_TEXTS } from './constants/presets';
 
 export default function App() {
@@ -37,9 +37,10 @@ export default function App() {
       setVoices(available);
 
       if (available.length > 0 && !selectedVoice) {
-        // Prefer Thai voice if language is TH
+        // Prefer Lao or Thai voice
+        const laoVoice = available.find((v) => v.lang.toLowerCase().includes('lo') || v.name.toLowerCase().includes('lao'));
         const thaiVoice = available.find((v) => v.lang.toLowerCase().includes('th'));
-        setSelectedVoice(thaiVoice || available[0]);
+        setSelectedVoice(laoVoice || thaiVoice || available[0]);
       }
     };
 
@@ -50,7 +51,17 @@ export default function App() {
     }
   }, []);
 
-  // Update text when switching language if text is equal to default sample
+  // Auto-switch voice when Lao script is detected in text
+  useEffect(() => {
+    if (containsLaoScript(text) && voices.length > 0) {
+      const laoVoice = voices.find((v) => v.lang.toLowerCase().includes('lo') || v.name.toLowerCase().includes('lao'));
+      if (laoVoice && selectedVoice?.name !== laoVoice.name) {
+        setSelectedVoice(laoVoice);
+      }
+    }
+  }, [text, voices]);
+
+  // Update text when switching UI language if text is default sample
   useEffect(() => {
     if (lang === 'en' && text === SAMPLE_TEXTS.th[0].text) {
       setText(SAMPLE_TEXTS.en[0].text);
@@ -256,7 +267,7 @@ export default function App() {
 
       {/* Footer */}
       <footer className="border-t border-slate-900 bg-slate-950 py-4 text-center text-xs text-slate-500 font-normal">
-        VoiceCraft Text-to-Speech Studio • Powered by Web Speech API & Web Audio API
+        VoiceCraft Text-to-Speech Studio • Enhanced Lao 🇱🇦, Thai 🇹🇭 & English Voice Support
       </footer>
 
       {/* Guide Modal */}

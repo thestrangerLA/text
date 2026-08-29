@@ -11,18 +11,33 @@ export function getAvailableVoices() {
     const aName = a.name.toLowerCase();
     const bName = b.name.toLowerCase();
 
-    const aIsLaoOrThai = aLang.includes('th') || aLang.includes('lo') || aName.includes('lao');
-    const bIsLaoOrThai = bLang.includes('th') || bLang.includes('lo') || bName.includes('lao');
+    const aIsLao = aLang.includes('lo') || aName.includes('lao');
+    const bIsLao = bLang.includes('lo') || bName.includes('lao');
 
-    if (aIsLaoOrThai && !bIsLaoOrThai) return -1;
-    if (!aIsLaoOrThai && bIsLaoOrThai) return 1;
+    if (aIsLao && !bIsLao) return -1;
+    if (!aIsLao && bIsLao) return 1;
+
+    const aIsThai = aLang.includes('th');
+    const bIsThai = bLang.includes('th');
+
+    if (aIsThai && !bIsThai) return -1;
+    if (!aIsThai && bIsThai) return 1;
+
     return a.name.localeCompare(b.name);
   });
 }
 
 /**
+ * Detect if text contains Lao Unicode characters (\u0E80-\u0EFF)
+ */
+export function containsLaoScript(text) {
+  if (!text) return false;
+  return /[\u0E80-\u0EFF]/.test(text);
+}
+
+/**
  * Tokenize text into words/phrases for real-time word highlighting.
- * Handles English, Thai, and Lao scripts.
+ * Handles English, Thai, and Lao scripts (\u0E80-\u0EFF).
  */
 export function tokenizeText(text) {
   if (!text) return [];
